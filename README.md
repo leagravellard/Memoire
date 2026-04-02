@@ -81,6 +81,24 @@ Le projet est livré avec une application web interactive (`src/app.py`) comport
 3. **Simulateur météo** — sliders pour tester manuellement chaque paramètre
 4. **Prédiction en temps réel** — saisir n'importe quelle ville du monde pour obtenir une prédiction basée sur les conditions actuelles (via l'API OpenWeatherMap)
 
+### Dépendances principales
+
+| Package | Version | Usage |
+|---|---|---|
+| `streamlit` | 1.55.0 | Application web interactive |
+| `scikit-learn` | 1.8.0 | Random Forest, Régression Logistique, métriques |
+| `xgboost` | 3.2.0 | XGBoost classifier |
+| `pandas` | 2.3.3 | Manipulation des données |
+| `numpy` | 2.4.2 | Calcul numérique |
+| `matplotlib` | 3.10.8 | Visualisations statiques |
+| `seaborn` | 0.13.2 | Heatmaps et distributions |
+| `plotly` | 6.5.2 | Graphiques interactifs |
+| `shap` | 0.51.0 | Interprétabilité des modèles |
+| `mlflow` | 3.10.0 | Suivi des expériences |
+| `requests` | 2.32.3 | Appels API OpenWeatherMap |
+
+> Le fichier `requirements.txt` contient l'environnement complet (`pip freeze`).
+
 ### Lancer l'application
 
 ```bash
@@ -88,7 +106,7 @@ Le projet est livré avec une application web interactive (`src/app.py`) comport
 pip install -r requirements.txt
 
 # Lancer l'app
-streamlit streamlit run src/app.py
+streamlit run src/app.py
 ```
 
 ---
