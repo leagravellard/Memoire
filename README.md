@@ -70,6 +70,14 @@ L'objectif est de démontrer que des données météorologiques seules (tempéra
 2. Direction et vitesse du vent — dispersion des polluants
 3. Température et humidité — stabilité des masses d'air
 
+### Le notebook en HTML
+
+Le notebook est intégré dans l'application Streamlit sous forme de fichier HTML (`Notebooks/01_exploration.html`), ce qui permet de l'afficher directement dans le navigateur sans dépendance à Jupyter. Après chaque mise à jour du notebook `.ipynb`, régénérer le HTML avec :
+
+```bash
+jupyter nbconvert --to html Notebooks/01_exploration.ipynb
+```
+
 ---
 
 ## Application Streamlit
