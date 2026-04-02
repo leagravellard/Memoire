@@ -96,7 +96,7 @@ streamlit streamlit run src/app.py
 ## Structure du projet
 
 ```
-Mémoire_new/
+Memoire/
 ├── Dataset/
 │   └── GlobalWeatherRepository.csv       # Données brutes (~126k lignes)
 ├── Notebooks/
