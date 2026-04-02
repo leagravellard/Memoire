@@ -1,3 +1,5 @@
 venv/
 .env
 notebooks/rf_meteo_model.pkl
+.history/
+.vscode/
