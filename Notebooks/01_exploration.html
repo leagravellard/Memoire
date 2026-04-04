@@ -7844,7 +7844,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -7893,7 +7893,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"../Dataset/GlobalWeatherRepository.csv"</span><span class="p">)</span>
@@ -7909,7 +7909,7 @@ a.anchor-link {
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[2]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[9]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -11219,7 +11219,7 @@ Name: count, dtype: int64</pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Cette section constitue le cœur de notre étude. Notre objectif est de tester la capacité de différents algorithmes à prédire les catégories de qualité de l'air en nous appuyant sur trois scénarios distincts : l'utilisation exclusive des variables météorologiques (<strong>Meteo Only</strong>), l'utilisation exclusive des polluants (<strong>Pollutants Only</strong>), et enfin la combinaison des deux (<strong>Meteo + Pollutants</strong>). Cette approche nous permettra de quantifier précisément l'influence réelle de la météo sur la pollution.</p>
+<p>Cette section constitue le cœur de notre étude. Notre objectif est de tester la capacité de différents algorithmes à prédire les catégories de qualité de l'air en nous appuyant sur l'utilisation exclusive des variables météorologiques. Cette approche nous permettra de quantifier précisément l'influence réelle de la météo sur la pollution.</p>
 <p>La démarche se décompose comme suit :</p>
 <ul>
 <li><p>Division du dataset : Nous séparons nos données en un ensemble d'entraînement (train) pour permettre aux modèles d'apprendre, et un ensemble de test (test) pour évaluer leurs performances sur des données jamais vues.</p>
@@ -11235,7 +11235,7 @@ Name: count, dtype: int64</pre>
 </ul>
 </li>
 </ul>
-<p>En comparant ces modèles et ces jeux de données, nous pourrons déterminer lequel est le plus apte à répondre à notre problématique et valider si les variables météorologiques suffisent à anticiper le niveau de pollution.</p>
+<p>En comparant ces modèles , nous pourrons déterminer lequel est le plus apte à répondre à notre problématique et valider si les variables météorologiques suffisent à anticiper le niveau de pollution.</p>
 </div>
 </div>
 </div>
@@ -11255,7 +11255,7 @@ Name: count, dtype: int64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [102]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">target</span> <span class="o">=</span> <span class="s1">'air_quality_us-epa-index'</span>
@@ -11301,12 +11301,6 @@ Name: count, dtype: int64</pre>
 <span class="c1"># X pour les 3 modèles</span>
 <span class="n">X_train_meteo</span> <span class="o">=</span> <span class="n">train_df</span><span class="p">[</span><span class="n">meteo_features</span><span class="p">]</span>
 <span class="n">X_test_meteo</span>  <span class="o">=</span> <span class="n">test_df</span><span class="p">[</span><span class="n">meteo_features</span><span class="p">]</span>
-
-<span class="n">X_train_poll</span>  <span class="o">=</span> <span class="n">train_df</span><span class="p">[</span><span class="n">pollutant_features</span><span class="p">]</span>
-<span class="n">X_test_poll</span>   <span class="o">=</span> <span class="n">test_df</span><span class="p">[</span><span class="n">pollutant_features</span><span class="p">]</span>
-
-<span class="n">X_train_all</span>   <span class="o">=</span> <span class="n">train_df</span><span class="p">[</span><span class="n">all_features</span><span class="p">]</span>
-<span class="n">X_test_all</span>    <span class="o">=</span> <span class="n">test_df</span><span class="p">[</span><span class="n">all_features</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -11382,8 +11376,6 @@ Name: count, dtype: int64</pre>
 <span class="c1"># Entraîner / évaluer les 3 modèles</span>
 <span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">train_and_eval_rf_metrics</span><span class="p">(</span><span class="s2">"RF_Model_B_Meteo_only"</span><span class="p">,</span> <span class="n">X_train_meteo</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">X_test_meteo</span><span class="p">,</span> <span class="n">y_test</span><span class="p">,</span> <span class="n">rf_params</span><span class="p">))</span>
-<span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">train_and_eval_rf_metrics</span><span class="p">(</span><span class="s2">"RF_Model_A_Pollutants_only"</span><span class="p">,</span> <span class="n">X_train_poll</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">X_test_poll</span><span class="p">,</span> <span class="n">y_test</span><span class="p">,</span> <span class="n">rf_params</span><span class="p">))</span>
-<span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">train_and_eval_rf_metrics</span><span class="p">(</span><span class="s2">"RF_Model_C_Meteo_plus_Pollutants"</span><span class="p">,</span> <span class="n">X_train_all</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">X_test_all</span><span class="p">,</span> <span class="n">y_test</span><span class="p">,</span> <span class="n">rf_params</span><span class="p">))</span>
 
 <span class="n">results_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
 <span class="n">results_df</span>
@@ -11526,8 +11518,6 @@ Name: count, dtype: int64</pre>
 <span class="c1"># Entraînement des 3 modèles</span>
 <span class="n">results_xgb</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">results_xgb</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">train_and_eval_xgb_metrics</span><span class="p">(</span><span class="s2">"XGB_Meteo_only"</span><span class="p">,</span> <span class="n">X_train_meteo</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">X_test_meteo</span><span class="p">,</span> <span class="n">y_test</span><span class="p">,</span> <span class="n">xgb_params</span><span class="p">))</span>
-<span class="n">results_xgb</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">train_and_eval_xgb_metrics</span><span class="p">(</span><span class="s2">"XGB_Pollutants_only"</span><span class="p">,</span> <span class="n">X_train_poll</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">X_test_poll</span><span class="p">,</span> <span class="n">y_test</span><span class="p">,</span> <span class="n">xgb_params</span><span class="p">))</span>
-<span class="n">results_xgb</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">train_and_eval_xgb_metrics</span><span class="p">(</span><span class="s2">"XGB_Meteo_plus_Pollutants"</span><span class="p">,</span> <span class="n">X_train_all</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">X_test_all</span><span class="p">,</span> <span class="n">y_test</span><span class="p">,</span> <span class="n">xgb_params</span><span class="p">))</span>
 
 <span class="n">results_xgb_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">results_xgb</span><span class="p">)</span>
 <span class="n">results_xgb_df</span>
@@ -11663,8 +11653,6 @@ Name: count, dtype: int64</pre>
 
 <span class="n">results_logreg</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">results_logreg</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">train_and_eval_logreg_metrics</span><span class="p">(</span><span class="s2">"LogReg_Model_B_Meteo_only"</span><span class="p">,</span> <span class="n">X_train_meteo</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">X_test_meteo</span><span class="p">,</span> <span class="n">y_test</span><span class="p">,</span> <span class="n">logreg_params</span><span class="p">))</span>
-<span class="n">results_logreg</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">train_and_eval_logreg_metrics</span><span class="p">(</span><span class="s2">"LogReg_Model_A_Pollutants_only"</span><span class="p">,</span> <span class="n">X_train_poll</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">X_test_poll</span><span class="p">,</span> <span class="n">y_test</span><span class="p">,</span> <span class="n">logreg_params</span><span class="p">))</span>
-<span class="n">results_logreg</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">train_and_eval_logreg_metrics</span><span class="p">(</span><span class="s2">"LogReg_Model_C_Meteo_plus_Pollutants"</span><span class="p">,</span> <span class="n">X_train_all</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">X_test_all</span><span class="p">,</span> <span class="n">y_test</span><span class="p">,</span> <span class="n">logreg_params</span><span class="p">))</span>
 
 <span class="n">results_logreg_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">results_logreg</span><span class="p">)</span>
 <span class="n">results_logreg_df</span>
