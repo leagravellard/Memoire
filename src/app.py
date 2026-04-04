@@ -110,20 +110,18 @@ with tab_summary:
     - **Variables :** Il regroupe des paramètres météo complets et des mesures de polluants (CO, O₃, NO₂, SO₂, PM2.5, PM10) pour des milliers de localisations mondiales.
     
     #### Stratégie de Modélisation (Pourquoi ce choix ?)
-    Pour répondre à la problématique, nous avons testé trois scénarios. Il est crucial de comprendre pourquoi seul le modèle **"Météo uniquement"** a une valeur prédictive réelle :
+    Pour répondre à notre problématique, nous avons fait le choix exclusif d'un modèle 
+    basé sur les seules variables météorologiques. 
+    Cette approche est la seule qui possède une réelle valeur ajoutée pour ce projet :
+
+    1. Création d'un "capteur virtuel" : 
+    Le modèle doit apprendre à déduire la pollution sans jamais consulter 
+    de relevés chimiques.
+
+    2. Indépendance technique : 
+    En excluant les polluants (PM2.5, NO2, etc.), l'outil reste fonctionnel 
+    dans les zones dépourvues de stations de mesure coûteuses.
     
-    1.  **Scénario A : Polluants uniquement**
-        * *Observation :* Ce modèle obtient un score parfait (**ROC-AUC = 1.0**).
-        * *Explication :* C'est un résultat **trivial**. L'indice de qualité de l'air (cible) est mathématiquement calculé à partir des concentrations de ces mêmes polluants. 
-                Le modèle ne fait que réapprendre une formule de calcul déjà existante.
-    
-    2.  **Scénario B : Météo uniquement (Choix Final)** 
-        * *Objectif :* C'est le **cœur du projet**. Ici, le modèle doit "deviner" la pollution sans jamais voir les capteurs chimiques. 
-        * *Utilité :* C'est le seul scénario qui permet une **anticipation réelle** dans des zones non équipées de capteurs de pollution.
-    
-    3.  **Scénario C : Mix Météo + Polluants** * *Observation :* Très performant, mais **inutile en pratique**. 
-        * *Explication :* Si nous devons déjà posséder des capteurs de polluants pour faire fonctionner le modèle, 
-                l'utilisation de la météo perd son intérêt principal (qui est de s'affranchir de ces capteurs).
     
     ---
     """)
@@ -241,9 +239,11 @@ with tab_city:
     Cette page permet d'appliquer notre modèle prédictif à des situations réelles actuelles. 
     
     **Comment ça fonctionne ?**
-    1. **Extraction :** En saisissant une ville, nous interrogeons l'API **OpenWeatherMap** pour récupérer les conditions atmosphériques en direct (température, vent, humidité, pression, etc.).
+    1. **Extraction :** En saisissant une ville, nous interrogeons l'API **OpenWeatherMap** pour récupérer 
+    les conditions atmosphériques en direct (température, vent, humidité, pression, etc.).
     2. **Traitement :** Ces données brutes sont formatées pour correspondre exactement aux entrées attendues par notre modèle *Random Forest*.
-    3. **Prédiction :** L'intelligence artificielle analyse ces paramètres météorologiques réels pour estimer la catégorie de pollution (US EPA Index) correspondante à cet instant précis.
+    3. **Prédiction :** L'intelligence artificielle analyse ces paramètres météorologiques 
+    réels pour estimer la catégorie de pollution (US EPA Index) correspondante à cet instant précis.
     """)
     st.info("💡 Note : Cette approche permet d'estimer la qualité de l'air même dans des villes ne possédant pas de capteurs chimiques onéreux.")
     
