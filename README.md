@@ -134,6 +134,3 @@ Memoire/
 
 ---
 
-## Conclusion
-
-Les variables météorologiques seules permettent de prédire la catégorie de qualité de l'air avec un **AUC de 0,86** sur un problème à 6 classes. Ce résultat valide l'hypothèse centrale : la météo peut servir de proxy aux mesures chimiques, rendant possible des systèmes d'alerte accessibles dans les zones sans infrastructure de surveillance de la qualité de l'air.
