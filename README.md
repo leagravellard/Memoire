@@ -131,5 +131,8 @@ Memoire/
 ├── venv/                                 # Environnement virtuel Python
 └── README.md
 ```
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> cd760d7df94ea62d00365a8d9b5d430f4869e480
