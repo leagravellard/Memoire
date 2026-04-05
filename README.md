@@ -6,7 +6,8 @@
 
 ## Problématique
 
-> *Dans quelle mesure les variables météorologiques permettent-elles d'anticiper la catégorie globale de qualité de l'air, indépendamment des mesures directes de polluants ?*
+> *Modélisation prédictive de la qualité de l'air : dans quelle mesure le Machine Learning permet-il de prédire la qualité de l'air à partir des seules données météorologiques, indépendamment des mesures directes de polluants ?*
+*
 
 L'objectif est de démontrer que des données météorologiques seules (température, vent, humidité, etc.) peuvent prédire la qualité de l'air, sans recours aux capteurs chimiques coûteux. Cela ouvre la voie à des systèmes d'alerte précoce accessibles partout dans le monde.
 
@@ -51,7 +52,7 @@ L'objectif est de démontrer que des données météorologiques seules (tempéra
 
 ---
 
-## Résultats (Scénario B — Météo seule)
+## Résultats
 
 | Métrique | Valeur |
 |---|---|
@@ -130,7 +131,7 @@ Memoire/
 │   └── app.py                            # Application Streamlit
 ├── venv/                                 # Environnement virtuel Python
 ├── README.md
-└── memoire.pdf                           # Mémoire (PDF)
+└── Mémoire.pdf                           # Mémoire (PDF)
 
 ```
 
