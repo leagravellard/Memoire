@@ -129,5 +129,8 @@ Memoire/
 ├── src/
 │   └── app.py                            # Application Streamlit
 ├── venv/                                 # Environnement virtuel Python
-└── README.md
+├── README.md
+└── memoire.pdf                           # Mémoire (PDF)
+
 ```
+
