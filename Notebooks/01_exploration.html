@@ -11684,7 +11684,7 @@ Name: count, dtype: int64</pre>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p><strong>Analyse des scénarios et choix du modèle final</strong></p>
-<p>*Le choix du modèle gagnant : Random Forest *</p>
+<p><em>Le choix du modèle gagnant : Random Forest</em></p>
 <p>Le Random Forest s'impose comme le modèle de référence.</p>
 <p>Définition des métriques utilisées :</p>
 <pre><code>- Accuracy (Exactitude) : Proportion totale de prédictions correctes sur l'ensemble des classes.
@@ -11883,7 +11883,7 @@ Scores par fold :
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p><em>Justification des NaN pour la métrique ROC-AUC OVR en validation croisée</em></p>
-<p>Les valeurs NaN observées pour la métrique ROC-AUC OVR (One-vs-Rest) lors de la validation croisée stratifiée s'expliquent par la distribution déséquilibrée des classes dans le jeu de données. En validation croisée à 5 folds, chaque fold de test représente 20 % du dataset. Or, même avec une stratification, certaines classes minoritaires peuvent ne contenir que 0 ou 1 observation dans un fold de test donné. Dans ce cas, roc_auc_score ne peut mathématiquement pas calculer l'aire sous la courbe ROC pour cette classe, ce qui produit une valeur indéfinie (NaN).</p>
+<p>Les valeurs NaN observées pour la métrique ROC-AUC OVR lors de la validation croisée stratifiée s'expliquent par la distribution déséquilibrée des classes dans le jeu de données. En validation croisée à 5 folds, chaque fold de test représente 20 % du dataset. Or, même avec une stratification, certaines classes minoritaires peuvent ne contenir que 0 ou 1 observation dans un fold de test donné. Dans ce cas, roc_auc_score ne peut mathématiquement pas calculer l'aire sous la courbe ROC pour cette classe, ce qui produit une valeur indéfinie (NaN).</p>
 </div>
 </div>
 </div>
@@ -11925,11 +11925,10 @@ Scores par fold :
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [49]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># METEO ONLY</span>
-<span class="n">Xtr</span><span class="p">,</span> <span class="n">Xte</span> <span class="o">=</span> <span class="n">X_train_meteo</span><span class="p">,</span> <span class="n">X_test_meteo</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">Xtr</span><span class="p">,</span> <span class="n">Xte</span> <span class="o">=</span> <span class="n">X_train_meteo</span><span class="p">,</span> <span class="n">X_test_meteo</span>
 <span class="n">ytr</span> <span class="o">=</span> <span class="n">y_train</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span><span class="o">.</span><span class="n">values</span>
 <span class="n">yte</span> <span class="o">=</span> <span class="n">y_test</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span><span class="o">.</span><span class="n">values</span>
 
@@ -12031,12 +12030,11 @@ Weighted-AUC : Train=1.000 | Test=0.820
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [50]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Correction overfitting</span>
 
-<span class="c1"># METEO ONLY</span>
 <span class="n">Xtr</span><span class="p">,</span> <span class="n">Xte</span> <span class="o">=</span> <span class="n">X_train_meteo</span><span class="p">,</span> <span class="n">X_test_meteo</span>
 <span class="n">ytr</span> <span class="o">=</span> <span class="n">y_train</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span><span class="o">.</span><span class="n">values</span>
 <span class="n">yte</span> <span class="o">=</span> <span class="n">y_test</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span><span class="o">.</span><span class="n">values</span>
