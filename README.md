@@ -24,20 +24,17 @@ L'objectif est de démontrer que des données météorologiques seules (tempéra
 | Type | Variables |
 |---|---|
 | **Entrées météo (features)** | température, vitesse du vent, direction du vent, pression, précipitations, humidité, couverture nuageuse, ressenti thermique, visibilité, indice UV, rafales |
-| **Polluants (comparaison uniquement)** | CO, O3, NO2, SO2, PM2.5, PM10 |
 | **Variable cible** | `air_quality_us-epa-index` — 6 classes (1 = Bon → 6 = Dangereux), selon l'EPA américaine |
 
 ---
 
 ## Méthodologie
 
-### Trois scénarios de modélisation
+### Scénario de modélisation
 
 | Scénario | Features | Objectif |
-|---|---|---|
-| A — Polluants seuls | CO, O3, NO2, SO2, PM2.5, PM10 | Baseline / contrôle |
-| **B — Météo seule** | 11 variables météorologiques | **Cœur de l'étude** |
-| C — Météo + Polluants | 17 variables combinées | Borne supérieure théorique |
+| ** Variables météorologiques seulement** | 11 variables météorologiques | 
+|
 
 ### Algorithmes testés
 
@@ -47,7 +44,7 @@ L'objectif est de démontrer que des données météorologiques seules (tempéra
 
 ### Validation
 
-- Validation croisée stratifiée à 5 plis
+- Validation croisée stratifiée à 5 folds
 - Analyse du surapprentissage (modèle contraint vs. non contraint)
 - Courbes ROC-AUC (train et test)
 - Importance des variables (Gini Impurity)
