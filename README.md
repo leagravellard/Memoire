@@ -33,8 +33,7 @@ L'objectif est de démontrer que des données météorologiques seules (tempéra
 
 ### Scénario de modélisation
 
-| Scénario | Features | Objectif |
-| ** Variables météorologiques seulement** | 11 variables météorologiques | 
+| Scénario | Features | Objectif | ** Variables météorologiques seulement** | 11 variables météorologiques | 
 
 
 ### Algorithmes testés
