@@ -7,7 +7,7 @@
 ## Problématique
 
 > *Modélisation prédictive de la qualité de l'air : dans quelle mesure le Machine Learning permet-il de prédire la qualité de l'air à partir des seules données météorologiques, indépendamment des mesures directes de polluants ?*
-*
+
 
 L'objectif est de démontrer que des données météorologiques seules (température, vent, humidité, etc.) peuvent prédire la qualité de l'air, sans recours aux capteurs chimiques coûteux. Cela ouvre la voie à des systèmes d'alerte précoce accessibles partout dans le monde.
 
